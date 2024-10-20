@@ -1,4 +1,4 @@
- <?php 
+<?php 
  session_start();
  if(!$_SESSION['login']){     
     echo "<script>alert('Please Login to continue')</script>";       
@@ -325,6 +325,10 @@ align-items: center;
             cursor: pointer;
             text-decoration: none
 }
+a{
+            text-decoration: none;
+            color: #fff;
+        }
 
     </style>
 </head>
@@ -353,11 +357,17 @@ align-items: center;
 
  </div>
  <div class="nright">
-    <p>Home</p>
-    <P>Courses</P>
-    <p>Contact Us</p>
-    <p>Teachers</p>
- </div>
+            
+            <a href="index.php">Home</a>
+            <a class="cc" href="courses.php">Course</a>
+                <a href="contact.php">Contact Us</a>
+                <a href="teachers.php">Teachers</a>
+                <?php 
+             if (isset($_SESSION['login']) && $_SESSION['login']) {
+                echo "<a href='logout.php'>Logout</a>";
+            }
+                ?>
+            </div>
 </div>
 <div class="m1">
     <h2>"ALL COURSES"</h2>

@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,7 +215,10 @@ align-items: center;
     width: 100%;
     background: #000;
 }
-
+a{
+            text-decoration: none;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -240,11 +246,17 @@ align-items: center;
 
  </div>
  <div class="nright">
-    <p>Home</p>
-    <P>Courses</P>
-    <p>Contact Us</p>
-    <p>Teachers</p>
- </div>
+            
+            <a href="index.php">Home</a>
+            <a class="cc" href="courses.php">Course</a>
+                <a href="contact.php">Contact Us</a>
+                <a href="teachers.php">Teachers</a>
+                <?php 
+             if (isset($_SESSION['login']) && $_SESSION['login']) {
+                echo "<a href='logout.php'>Logout</a>";
+            }
+                ?>
+            </div>
 </div>
 <div class="m1">
     <h2>"OUR TEACHERS"</h2>
@@ -305,27 +317,7 @@ align-items: center;
     
     </div>
 
-<!-- </div>
-<div class="courses3">
-    <div class="c7">
-        <img class="img6" src="https://miro.medium.com/v2/resize:fit:1400/1*98ydKJQSWDGwHZxUV_-kLw.png">
-        <br>
-        <br>
-        <a href="https://www.youtube.com/watch?v=427pAhy9dI8" class="btn7">Learn now</a>
-    </div>
-    <div class="c8">
-        <img class="img6" src="https://user-images.githubusercontent.com/34319922/39473646-82767980-4d58-11e8-90a9-696182b80751.png">
-        <br>
-        <br>
-        <a href="https://www.youtube.com/watch?v=nPxCYOO1e44" class="btn7">Learn now</a>
-    </div>
-    <div class="c9">
-        <img class="img6" src="https://seeklogo.com/images/M/mongodb-logo-3659963037-seeklogo.com.png">
-        <br>
-        <br>
-        <a href="https://www.youtube.com/watch?v=J6mDkcqU_ZE" class="btn7">Learn now</a>
-    </div>
-</div> -->
+
 
     </div>
  
